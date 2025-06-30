@@ -104,6 +104,7 @@ while (mengulang) {
         }
     } else if (pilihan == "2" || pilihan.includes("klas")) {
         console.log("Memilih klasifikasi");
+        var angka = parseFloat(prompt("Masukkan angka untuk klasifikasi:"));
     } else {
         alert("Pilihan tidak valid");
     }
