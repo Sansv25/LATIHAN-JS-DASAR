@@ -1,8 +1,8 @@
 var mengulang = false; // inisialisasi variabel untuk mengontrol loop
 function mulai() {
     mengulang = true; // set mengulang menjadi true untuk memulai loop
-    program()
     console.log("Program dimulai");
+    program()
 }
 function program() {
     while (mengulang) { // loop selama mengulang bernilai true
