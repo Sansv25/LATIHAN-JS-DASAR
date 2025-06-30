@@ -25,9 +25,9 @@ while (mengulang) {
                 alert("Anda harus memasukkan minimal 2 angka untuk perhitungan.");
             } else if (berapaangka === null || isNaN(berapaangka) || berapaangka < 2) {
                 alert("Input tidak valid. Keluar dari perhitungan.");
-                break;
+                break; // keluar dari loop jika input tidak valid
             } else {
-                break;
+                break; // keluar dari loop jika input valid
             }
         }
         var daftarAngka = []; // deklarasi array kosong
