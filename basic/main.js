@@ -1,9 +1,11 @@
 var mengulang = false; // inisialisasi variabel untuk mengontrol loop
 function mulai() {
     mengulang = true; // set mengulang menjadi true untuk memulai loop
+    program()
     console.log("Program dimulai");
 }
-while (mengulang) { // loop selama mengulang bernilai true
+function program() {
+    while (mengulang) { // loop selama mengulang bernilai true
     var pilihan = prompt("Masukkan pilihan:" + "\n1. Perhitungan" + "\n2. Klasifikasi"); // <-- Prompt Untuk Meminta user Mengetikan pilihan
     pilihan = pilihan.toLowerCase(); // <-- Tolowercase untuk mengubah isi variable pilihan menjadi huruf kecil atau kapital ke huruf kecil
     if (pilihan == "1" || pilihan.includes("hitung")) { // <-- Jika pilihan adalah 1 atau mengandung kata 'hitung' bernilai true
@@ -120,4 +122,5 @@ while (mengulang) { // loop selama mengulang bernilai true
         mengulang = false;
         alert("Terima kasih telah menggunakan program ini!");
     }
+}
 }
