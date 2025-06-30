@@ -1,1 +1,1 @@
-ini adalah js  
+ini adalah js  dasar
