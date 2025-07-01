@@ -6,7 +6,7 @@ function mulai() {
 }
 function program() {
     while (mengulang) { // loop selama mengulang bernilai true
-    var pilihan = prompt("Masukkan pilihan:" + "\n1. Perhitungan" + "\n2. Klasifikasi"); // <-- Prompt Untuk Meminta user Mengetikan pilihan
+    var pilihan = prompt("Masukkan pilihan:" + "\n1. Perhitungan" + "\n2. Klasifikasi" + "\n. Cetak Angka");// <-- Prompt Untuk Meminta user Mengetikan pilihan
     pilihan = pilihan.toLowerCase(); // <-- Tolowercase untuk mengubah isi variable pilihan menjadi huruf kecil atau kapital ke huruf kecil
     if (pilihan == "1" || pilihan.includes("hitung")) { // <-- Jika pilihan adalah 1 atau mengandung kata 'hitung' bernilai true
         console.log("Memilih perhitungan"); // <-- Menampilkan pesan ke konsol
@@ -22,14 +22,14 @@ function program() {
         {
             console.log("Operasi tidak valid");
             alert("Pilihan operasi tidak valid.");
-            continue; // kembali ke awal loop jika input tidak valid ke line  2
+            continue; // kembali ke awal loop jika input tidak valid ke line  8
         }
         while (true) {
             var berapaangka = parseInt(prompt("Masukkan jumlah angka yang ingin dihitung (2 atau lebih):")); //perseint mengubah input menjadi integer
             console.log("Jumlah angka yang dimasukkan:", berapaangka);
-            if (berapaangka == 1) {
+            if (berapaangka < 2) {
                 alert("Anda harus memasukkan minimal 2 angka untuk perhitungan.");
-            } else if (berapaangka === null || isNaN(berapaangka) || berapaangka < 2) {
+            } else if (berapaangka === null || isNaN(berapaangka)) {
                 alert("Input tidak valid. Keluar dari perhitungan.");
                 break; // keluar dari loop jika input tidak valid
             } else {
@@ -110,8 +110,31 @@ function program() {
         }
     } else if (pilihan == "2" || pilihan.includes("klas")) {
         console.log("Memilih klasifikasi");
-        var angka = parseFloat(prompt("Masukkan angka untuk klasifikasi:"));
-        console.log("Angka yang dimasukkan:", angka);
+        var klasifikasi_pilihan = prompt("Pilih jenis klasifikasi:" + "\n1. Bilangan Genap atau Ganjil" + "\n2. Bilangan Positif atau Negatif"  + "\n2. Bilangan Prima"); // <-- Prompt untuk meminta user memilih jenis klasifikasi
+    } else if () {
+        console.log("Memilih cetak angka");
+        var angka = parseInt(prompt("Masukkan Operasi cetak angka:" + "\n1. Cetak Angka Genap" + "\n2. Cetak Angka Ganjil" + "\n3. Cetak Bilangan Prima")); // <-- Prompt untuk meminta user memilih operasi cetak angka
+        var angka = angka.toLowerCase(); // <-- Mengubah input variable angka menjadi huruf kecil
+        if (!(angka <= 3) && // <-- memeriksa apakah angka kurang dari sama dengan 3
+            !angka.includes("genap") &&
+            !angka.includes("ganjil") && 
+            !angka.includes("prima") || // <-- Memeriksa apakah angka tidak mengandung kata 'genap', 'ganjil', atau 'prima'
+            angka == "" // <-- Memeriksa apakah angka kosong
+        )  // <-- Memeriksa apakah input angka tidak valid
+        {
+            console.log("Operasi tidak valid");
+            alert("Pilihan operasi tidak valid.");
+            continue; // kembali ke awal loop jika input tidak valid ke line 8
+        }
+        var batas = parseInt(prompt("Masukkan batas angka:")); // <-- Prompt untuk meminta user memasukkan batas angka
+        while (true) {
+            var batas = parseInt(prompt("Masukkan batas angka:")); // <-- Meminta user memasukkan batas angka
+            if (isNaN(batas) || batas <= 0) {
+                alert("Input tidak valid. Silakan masukkan angka yang benar.");
+            } else {
+                break; // keluar dari loop jika input valid
+            }
+        }
     } else {
         alert("Pilihan tidak valid");
     }
