@@ -1,4 +1,4 @@
-import { cetak_genap, cetak_ganjil } from './function.js';
+import { cetak_genap, cetak_ganjil, cetak_prima} from './function.js';
 var mengulang = false;
 function mulai() {
     mengulang = true;
@@ -8,12 +8,6 @@ function mulai() {
 function program() {
     while (mengulang) {
     var pilihan = prompt("Masukkan pilihan:" + "\n1. Perhitungan" + "\n2. Klasifikasi" + "\n3. Cetak Angka");
-    console.log("Pilihan yang dimasukkan:", pilihan);
-    if (pilihan === null) {
-        alert("Anda telah membatalkan pilihan.");
-        mengulang = false;
-        break;
-    }
     pilihan = pilihan.toLowerCase();
     if (pilihan == "1" || pilihan.includes("hitung")) {
         console.log("Memilih perhitungan");
@@ -121,6 +115,11 @@ function program() {
     } else if (pilihan == "3" || pilihan.includes("cetak")) {
         console.log("Memilih cetak angka");
         var operasi_cetak = prompt("Masukkan Operasi cetak angka:" + "\n1. Cetak Angka Genap" + "\n2. Cetak Angka Ganjil" + "\n3. Cetak Bilangan Prima");
+        if (operasi_cetak === null) {
+            alert("Anda telah membatalkan pilihan.");
+            mengulang = false;
+            break;
+        }
         var operasi = operasi_cetak.toLowerCase();
         if (!(operasi <= 3) &&
             !operasi.includes("genap") &&
@@ -137,28 +136,25 @@ function program() {
         if (operasi == "1" || operasi.includes("genap")) {
             console.log("Memilih cetak angka genap");
             hasil = cetak_genap();
-        } else if (operasi_cetak == "2" || operasi_cetak.includes("ganjil")) {
+        } else if (operasi == "2" || operasi.includes("ganjil")) {
             console.log("Memilih cetak angka ganjil");
-            hasil = cetak_ganjil(operasi_cetak);
-        } else if (operasi_cetak == "3" || operasi_cetak.includes("prima")) {
+            hasil = cetak_ganjil();
+        } else if (operasi == "3" || operasi.includes("prima")) {
             console.log("Memilih cetak bilangan prima");
-            console.log("Pilihan tidak valid");
-            alert("Pilihan tidak valid.");
-            continue;
+            hasil =  cetak_prima();
         }
-        if (hasil === "0" || hasil === "1" || hasil === "2") {
-            console.log("Tidak ada angka yang dicetak");
-            alert("Tidak ada angka yang dicetak.");
-        } else {
+        if (hasil !== 0)  {
             console.log("Hasil cetak angka:", hasil);
             alert("Hasil cetak angka: " + hasil.join(", "));
         }
     } else if (pilihan === null) {
         alert("Anda telah membatalkan pilihan.");
+        mengulang = false;
+        break;
     } else {
         alert("Pilihan tidak valid");
     }
-    var ulang = confirm("Apakah Anda ingin mengulang?");
+    var ulang = confirm("Apakah Anda ingin mengulang program?");
     if (ulang) {
         mengulang = true;
     } else {
@@ -166,4 +162,5 @@ function program() {
         alert("Terima kasih telah menggunakan program ini!");
     }
 }
-}window.mulai = mulai;
+}
+window.mulai = mulai;
