@@ -4,7 +4,7 @@ Proyek ini berisi kumpulan skrip JavaScript sederhana yang dirancang untuk melat
 
 ## 📂 Struktur Proyek
 
-```plaintext
+`
 basic/
 ├── src/
 │   ├── input.css       → File sumber Tailwind CSS
@@ -13,7 +13,7 @@ basic/
 │   ├── main.js         → Skrip utama JavaScript
 │   └── function.js     → Kumpulan fungsi modular
 └── README.md           → Dokumentasi proyek ini
-```
+`
 
 ## 🎯 Tujuan
 
