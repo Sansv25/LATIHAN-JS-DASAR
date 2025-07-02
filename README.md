@@ -1,17 +1,19 @@
-# JavaScript Dasar – Latihan Logika
+![image](https://github.com/user-attachments/assets/6a29963a-c916-4f0c-ad29-a050efff3c82)# JavaScript Dasar – Latihan Logika
 
 Proyek ini berisi kumpulan skrip JavaScript sederhana yang dirancang untuk melatih dan mengasah logika pemrograman. Cocok untuk pemula yang ingin memahami dasar-dasar JavaScript melalui studi kasus dan tantangan logika.
 
 ## 📂 Struktur Proyek
 
+```plaintext
 basic/
 ├── src/
-│ ├── input.css → File sumber Tailwind CSS
-│ ├── output.css → File hasil build Tailwind CSS
-│ ├── index.html → Halaman utama untuk menjalankan program
-│ ├── main.js → Skrip utama JavaScript
-│ └── function.js → Kumpulan fungsi modular
-└── README.md → Dokumentasi proyek ini
+│   ├── input.css       → File sumber Tailwind CSS
+│   ├── output.css      → File hasil build Tailwind CSS
+│   ├── index.html      → Halaman utama untuk menjalankan program
+│   ├── main.js         → Skrip utama JavaScript
+│   └── function.js     → Kumpulan fungsi modular
+└── README.md           → Dokumentasi proyek ini
+```
 
 ## 🎯 Tujuan
 
