@@ -1,17 +1,40 @@
 import { cetak_genap, cetak_ganjil, cetak_prima} from './function.js';
-var mengulang = false;
 function mulai() {
-    mengulang = true;
     console.log("Program dimulai");
     program()
 }
 function program() {
-    while (mengulang) {
+    while (true) {
     var pilihan = prompt("Masukkan pilihan:" + "\n1. Perhitungan" + "\n2. Klasifikasi" + "\n3. Cetak Angka");
+    if (pilihan === null) {
+        console.log("Pengguna membatalkan pilihan.");
+        alert("Anda telah membatalkan pilihan.Terima kasih telah menggunakan program ini!");
+        break;
+    }
     pilihan = pilihan.toLowerCase();
     if (pilihan == "1" || pilihan.includes("hitung")) {
         console.log("Memilih perhitungan");
-        var perhitungan_pilihan = prompt("Pilih operasi perhitungan:" + "\n1. Penjumlahan" + "\n2. Pengurangan" + "\n3. Perkalian" + "\n4. Pembagian");
+        while (true) {
+            var perhitungan_pilihan = prompt("Pilih operasi perhitungan:" + "\n1. Penjumlahan" + "\n2. Pengurangan" + "\n3. Perkalian" + "\n4. Pembagian");
+        if (perhitungan_pilihan === null) {
+            console.log("Pengguna membatalkan pilihan.");
+            alert("Anda telah membatalkan pilihan.");
+            var ulang_perhitungan =  confirm("Apakah Anda ingin mengulang?");
+            if (ulang_perhitungan) {
+                console.log("Pengguna memilih untuk mengulang program.");
+                var pilihan = confirm("Anda ingin mengulang memilih perhitungan?");
+                if (pilihan) {
+                    continue;
+                } else {
+                    console.log("Pengguna tidak mengulang perhitungan.");
+                    break;
+                }
+            } else {
+                console.log("Pengguna tidak mengulang program.");
+                alert("Terima kasih telah menggunakan program ini!");
+                break;
+            }
+        }
         var operasi = perhitungan_pilihan.toLowerCase();
         if (!(operasi <= 4) &&
             !operasi.includes("jum") &&
@@ -106,19 +129,36 @@ function program() {
                     }
                     break;
             }
+        }
             console.log("Hasil perhitungan:", hasil);
             alert("Hasil perhitungan: " + hasil);
+            break;
         }
     } else if (pilihan == "2" || pilihan.includes("klas")) {
         console.log("Memilih klasifikasi");
         var klasifikasi_pilihan = prompt("Pilih jenis klasifikasi:" + "\n1. Bilangan Genap atau Ganjil" + "\n2. Bilangan Positif atau Negatif"  + "\n2. Bilangan Prima");
     } else if (pilihan == "3" || pilihan.includes("cetak")) {
         console.log("Memilih cetak angka");
-        var operasi_cetak = prompt("Masukkan Operasi cetak angka:" + "\n1. Cetak Angka Genap" + "\n2. Cetak Angka Ganjil" + "\n3. Cetak Bilangan Prima");
+        while (true) {
+            var operasi_cetak = prompt("Masukkan Operasi cetak angka:" + "\n1. Cetak Angka Genap" + "\n2. Cetak Angka Ganjil" + "\n3. Cetak Bilangan Prima");
         if (operasi_cetak === null) {
+            console.log("Pengguna membatalkan pilihan.");
             alert("Anda telah membatalkan pilihan.");
-            mengulang = false;
-            break;
+            var ulang_cetak =  confirm("Apakah Anda ingin mengulang?");
+            if (ulang_cetak) {
+                console.log("Pengguna memilih untuk mengulang program.");
+                var pilihan = confirm("Anda ingin mengulang perhitungan?");
+                if (pilihan) {
+                    continue;
+                } else {
+                    console.log("Pengguna tidak mengulang memilih cetak angka.");
+                    break;
+                }
+            } else {
+                console.log("Pengguna tidak mengulang program.");
+                alert("Terima kasih telah menggunakan program ini!");
+                break;
+            }
         }
         var operasi = operasi_cetak.toLowerCase();
         if (!(operasi <= 3) &&
@@ -147,19 +187,19 @@ function program() {
             console.log("Hasil cetak angka:", hasil);
             alert("Hasil cetak angka: " + hasil.join(", "));
         }
-    } else if (pilihan === null) {
-        alert("Anda telah membatalkan pilihan.");
-        mengulang = false;
         break;
-    } else {
+        }
+    }else {
         alert("Pilihan tidak valid");
     }
     var ulang = confirm("Apakah Anda ingin mengulang program?");
     if (ulang) {
-        mengulang = true;
+        console.log("Pengguna memilih untuk mengulang program.");
+        continue;
     } else {
-        mengulang = false;
+        console.log("Pengguna tidak mengulang program.");
         alert("Terima kasih telah menggunakan program ini!");
+        break;
     }
 }
 }
