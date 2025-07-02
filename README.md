@@ -3,16 +3,17 @@
 Proyek ini berisi kumpulan skrip JavaScript sederhana yang dirancang untuk melatih dan mengasah logika pemrograman. Cocok untuk pemula yang ingin memahami dasar-dasar JavaScript melalui studi kasus dan tantangan logika.
 
 ## 📂 Struktur Proyek
-
 ```
-basic/
-├── src/
-│   ├── input.css       → File sumber Tailwind CSS
-│   ├── output.css      → File hasil build Tailwind CSS
-│   ├── index.html      → Halaman utama untuk menjalankan program
-│   ├── main.js         → Skrip utama JavaScript
-│   └── function.js     → Kumpulan fungsi modular
-└── README.md           → Dokumentasi proyek ini
+LATIHAN-JS-DASAR/
+├── JS_Dasar_V1/
+│   ├── src/
+│   │   ├── input.css       → File sumber Tailwind CSS
+│   │   └── output.css      → File hasil build Tailwind CSS
+│   ├── function.js         → Kumpulan fungsi modular JavaScript
+│   ├── javascript1.html    → Halaman utama untuk menjalankan program JS V1
+│   └── main.js             → Skrip utama JavaScript
+├── index.html              → Halaman index kosong (root)
+└── README.md               → Dokumentasi proyek ini
 ```
 
 ## 🎯 Tujuan
